@@ -2,6 +2,7 @@
 springBoot = '3.5.7'
 freefairLombokVersion = '8.13.1'
 lombok = '1.18.38'
+jacoco = '0.8.13'
 
 [libraries]
 spring-boot-devtools = { module = 'org.springframework.boot:spring-boot-devtools', version.ref = 'springBoot' }
