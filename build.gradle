@@ -4,6 +4,7 @@ plugins {
     id 'java'
     alias libs.plugins.spring.boot
     alias libs.plugins.lombok
+    id 'jacoco'
 }
 
 group = 'dev.avorakh.isdp'
@@ -22,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation platform (SpringBootPlugin.BOM_COORDINATES)
+    implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     developmentOnly libs.spring.boot.devtools
@@ -41,3 +42,41 @@ test {
 lombok {
     version = "${libs.versions.lombok.get()}"
 }
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    finalizedBy jacocoTestReport
+}
+
+
+jacoco {
+    toolVersion = libs.versions.jacoco.get()
+}
+
+
+jacocoTestReport {
+    executionData(test)
+    reports {
+        xml.required = true
+        html.required = true
+    }
+    dependsOn test
+}
+
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.3 // 30% Code Coverage
+            }
+        }
+    }
+    dependsOn jacocoTestReport
+}
+
+check.dependsOn jacocoTestCoverageVerification
+
