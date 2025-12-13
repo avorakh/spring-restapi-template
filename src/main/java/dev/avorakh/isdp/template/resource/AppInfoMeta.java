@@ -1,3 +1,7 @@
 package dev.avorakh.isdp.template.resource;
 
-public record AppInfoMeta(boolean success, String name) {}
+import lombok.Builder;
+import org.jspecify.annotations.NonNull;
+
+@Builder
+public record AppInfoMeta(boolean success, @NonNull String name) {}
