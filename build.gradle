@@ -4,6 +4,7 @@ plugins {
     id 'java'
     alias libs.plugins.spring.boot
     alias libs.plugins.lombok
+    alias libs.plugins.spotless
     id 'jacoco'
     id 'maven-publish'
 }
@@ -113,3 +114,22 @@ publishing {
     }
 }
 
+def spotlessConfigFilePath = "$rootDir/config/spotless/custom-java.xml"
+
+spotless {
+    java {
+        eclipse().configFile(spotlessConfigFilePath)
+        palantirJavaFormat()
+        importOrder()
+        endWithNewline()
+        removeUnusedImports()
+        cleanthat()
+        formatAnnotations()
+        forbidWildcardImports()
+    }
+
+    groovyGradle {
+        target '*.gradle' // default target of groovyGradle
+        greclipse().configFile(spotlessConfigFilePath)
+    }
+}

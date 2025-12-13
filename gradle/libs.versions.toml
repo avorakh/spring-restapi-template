@@ -3,6 +3,7 @@ springBoot = '3.5.7'
 freefairLombokVersion = '8.13.1'
 lombok = '1.18.38'
 jacoco = '0.8.13'
+spotless = '8.1.0'
 
 [libraries]
 spring-boot-devtools = { module = 'org.springframework.boot:spring-boot-devtools', version.ref = 'springBoot' }
@@ -10,3 +11,4 @@ spring-boot-devtools = { module = 'org.springframework.boot:spring-boot-devtools
 [plugins]
 spring-boot = { id = 'org.springframework.boot', version.ref = 'springBoot' }
 lombok = { id = 'io.freefair.lombok', version.ref = 'freefairLombokVersion' }
+spotless = { id = 'com.diffplug.spotless', version.ref = 'spotless' }

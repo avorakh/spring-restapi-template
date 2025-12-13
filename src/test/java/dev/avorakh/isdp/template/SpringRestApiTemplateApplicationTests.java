@@ -8,7 +8,7 @@ class SpringRestApiTemplateApplicationTests {
 
     @Test
     void contextLoads() {
+
         // context load check
     }
-
 }
