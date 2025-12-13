@@ -25,7 +25,7 @@ class AppInfoControllerTest {
     private AppInfoService appInfoService;
 
     @Test
-    public void shouldSuccessfullyReturnOkSCAndSuccessWithTrueInBody() throws Exception {
+    void shouldSuccessfullyReturnOkSCAndSuccessWithTrueInBody() throws Exception {
 
         var expectedName = "test";
         boolean expectedSuccess = true;

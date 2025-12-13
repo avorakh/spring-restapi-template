@@ -6,6 +6,7 @@ jacoco = '0.8.13'
 spotless = '8.1.0'
 jspecify = '1.0.0'
 checkstyle = '12.3.0'
+pmd-tool = '7.19.0'
 
 [libraries]
 spring-boot-devtools = { module = 'org.springframework.boot:spring-boot-devtools', version.ref = 'springBoot' }
