@@ -35,6 +35,15 @@ jobs:
         with:
           gradle-version: 8.14
 
+      - name: Create Gradle properties
+        run: |
+          mkdir -p ~/.gradle
+          cat <<EOF > ~/.gradle/gradle.properties
+          snapshot.repo.url=${{ secrets.SNAPSHOT_REPO_URL }}
+          snapshot.repo.user=${{ secrets.SNAPSHOT_REPO_USER }}
+          snapshot.repo.token=${{ secrets.SNAPSHOT_REPO_TOKEN }}
+          EOF
+
       - name: Build with Gradle
         run: gradle build
 
