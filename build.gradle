@@ -5,6 +5,7 @@ plugins {
     alias libs.plugins.spring.boot
     alias libs.plugins.lombok
     alias libs.plugins.spotless
+    id 'checkstyle'
     id 'jacoco'
     id 'maven-publish'
 }
@@ -75,7 +76,7 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 0.3 // 30% Code Coverage
+                minimum = 0.7 // 70% Code Coverage
             }
         }
     }
@@ -133,5 +134,19 @@ spotless {
     groovyGradle {
         target '*.gradle' // default target of groovyGradle
         greclipse().configFile(spotlessConfigFilePath)
+    }
+}
+
+checkstyle {
+    toolVersion = libs.versions.checkstyle.get()
+    configFile = file("$rootDir/config/checkstyle/checkstyle.xml")
+    ignoreFailures = false
+    showViolations = true
+}
+
+tasks.withType(Checkstyle).configureEach {
+    reports {
+        xml.required = true
+        html.required = true
     }
 }

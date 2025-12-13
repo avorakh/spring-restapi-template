@@ -16,7 +16,7 @@ class AppInfoServiceImplTest {
     }
 
     @Test
-    void shouldSuccessfully_getAppInfo() {
+    void shouldSuccessfullyGetAppInfo() {
 
         var expected = new AppInfoMeta(true, "template");
 
