@@ -18,7 +18,8 @@ public class AppInfoController {
     AppInfoService appInfoService;
 
     @GetMapping("/app/info")
-    public AppInfoMeta getAppInfo(){
+    public AppInfoMeta getAppInfo() {
+
         return appInfoService.getAppInfo();
     }
 }

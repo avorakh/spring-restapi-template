@@ -4,9 +4,11 @@ import dev.avorakh.isdp.template.resource.AppInfoMeta;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppInfoServiceImpl implements AppInfoService{
+public class AppInfoServiceImpl implements AppInfoService {
+
     @Override
     public AppInfoMeta getAppInfo() {
-        return new AppInfoMeta(true,"template");
+
+        return new AppInfoMeta(true, "template");
     }
 }
