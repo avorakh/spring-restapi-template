@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.jspecify.annotations.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AppInfoController {
 
-    AppInfoService appInfoService;
+    @NonNull AppInfoService appInfoService;
 
     @GetMapping("/app/info")
-    public AppInfoMeta getAppInfo() {
+    public @NonNull AppInfoMeta getAppInfo() {
 
         return appInfoService.getAppInfo();
     }
