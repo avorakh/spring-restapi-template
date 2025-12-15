@@ -87,8 +87,6 @@ jacocoTestCoverageVerification {
 
 check.dependsOn jacocoTestCoverageVerification
 
-
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
