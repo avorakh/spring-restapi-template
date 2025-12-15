@@ -7,6 +7,7 @@ spotless = '8.1.0'
 jspecify = '1.0.0'
 checkstyle = '12.3.0'
 pmd-tool = '7.19.0'
+dependencycheck = '12.1.9'
 
 [libraries]
 spring-boot-devtools = { module = 'org.springframework.boot:spring-boot-devtools', version.ref = 'springBoot' }
@@ -16,3 +17,4 @@ jspecify = { module = 'org.jspecify:jspecify', version.ref = 'jspecify' }
 spring-boot = { id = 'org.springframework.boot', version.ref = 'springBoot' }
 lombok = { id = 'io.freefair.lombok', version.ref = 'freefairLombokVersion' }
 spotless = { id = 'com.diffplug.spotless', version.ref = 'spotless' }
+dependencycheck = { id = 'org.owasp.dependencycheck', version.ref = 'dependencycheck' }

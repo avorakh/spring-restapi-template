@@ -9,6 +9,7 @@ plugins {
     id 'jacoco'
     id 'maven-publish'
     id 'pmd'
+    alias libs.plugins.dependencycheck
 }
 
 group = 'dev.avorakh.isdp'
@@ -159,4 +160,15 @@ pmd {
     rulesMinimumPriority = 5
     ruleSetFiles = files("$rootDir/config/pmd/pmd.xml") // The location of the configuration file.
     ruleSets = []
+}
+
+dependencyCheck {
+    analyzedTypes = ['jar']
+    analyzers {
+        assemblyEnabled = false
+        nuspecEnabled = false
+        nugetconfEnabled = false
+        msbuildEnabled = false
+        bundleAuditEnabled = false
+    }
 }
