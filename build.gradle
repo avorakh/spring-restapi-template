@@ -2,6 +2,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     id 'java'
+    id 'groovy'
     alias libs.plugins.spring.boot
     alias libs.plugins.lombok
     alias libs.plugins.spotless
@@ -36,6 +37,10 @@ dependencies {
     implementation libs.bundles.sec.fix
 
     developmentOnly libs.spring.boot.devtools
+
+    testImplementation platform(libs.groovy.bom)
+    testImplementation platform(libs.spock.bom)
+    testImplementation 'org.spockframework:spock-core'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
