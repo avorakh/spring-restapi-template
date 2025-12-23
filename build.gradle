@@ -140,6 +140,14 @@ spotless {
         forbidWildcardImports()
     }
 
+    groovy {
+        greclipse().configFile(spotlessConfigFilePath)
+        importOrder()
+        endWithNewline()
+        removeSemicolons()
+        trimTrailingWhitespace()
+    }
+
     groovyGradle {
         target '*.gradle' // default target of groovyGradle
         greclipse().configFile(spotlessConfigFilePath)
