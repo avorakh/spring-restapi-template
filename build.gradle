@@ -41,7 +41,7 @@ dependencies {
     testImplementation platform(libs.groovy.bom)
     testImplementation platform(libs.spock.bom)
     testImplementation 'org.spockframework:spock-core'
-
+    testImplementation 'org.spockframework:spock-spring'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
