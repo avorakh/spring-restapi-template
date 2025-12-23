@@ -33,6 +33,8 @@ dependencies {
     implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    implementation libs.bundles.sec.fix
+
     developmentOnly libs.spring.boot.devtools
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
